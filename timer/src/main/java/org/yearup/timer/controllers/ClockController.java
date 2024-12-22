@@ -24,44 +24,33 @@ public class ClockController {
     public void clockDisplay() throws InterruptedException {
         clockConfig.clockLogic();
     }
-    @GetMapping(path = "/{est}")
-    public void clockDisplayEst(@PathVariable String est) throws InterruptedException {
-        LocalTime now = LocalTime.now(ZoneId.of("America/New York"));
-
+    @GetMapping(path = "/est")
+    public void clockDisplayEst() throws InterruptedException {
         while(true){
-            System.out.println();
+            System.out.println(clockConfig.formattedTime(-5));
             Thread.sleep(1000);
-            now = LocalTime.now();
         }
     }
-    @GetMapping(path = "/{cst}")
-    public void clockDisplayCst(@PathVariable String cst) throws InterruptedException {
+    @GetMapping(path = "/cst")
+    public void clockDisplayCst() throws InterruptedException {
         LocalTime now = LocalTime.now(ZoneId.of("America/Chicago"));
-
         while(true){
-            System.out.println();
+            System.out.println(clockConfig.formattedTime(-6));
             Thread.sleep(1000);
-            now = LocalTime.now();
         }
     }
-    @GetMapping(path = "/{mst}")
-    public void clockDisplayMst(@PathVariable String mst) throws InterruptedException {
-        LocalTime now = LocalTime.now(ZoneId.of("America/Denver"));
-
+    @GetMapping(path = "/mst")
+    public void clockDisplayMst() throws InterruptedException {
         while(true){
-            System.out.println();
+            System.out.println(clockConfig.formattedTime(-7));
             Thread.sleep(1000);
-            now = LocalTime.now();
         }
     }
-    @GetMapping(path = "/{pst}")
-    public void clockDisplayPst(@PathVariable String pst) throws InterruptedException {
-        LocalTime now = LocalTime.now(ZoneId.of("America/Los Angeles"));
-
+    @GetMapping(path = "/pst")
+    public void clockDisplayPst() throws InterruptedException {
         while(true){
-            System.out.println();
+            System.out.println(clockConfig.formattedTime(-8));
             Thread.sleep(1000);
-            now = LocalTime.now();
         }
     }
 
