@@ -1,32 +1,18 @@
 package org.yearup.timer;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.format.annotation.DateTimeFormat;
-import org.yearup.timer.controllers.ClockController;
-import org.yearup.timer.dao.ClockDao;
 import org.yearup.timer.models.Clock;
-
-import java.time.Duration;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
-
-import static java.lang.Integer.parseInt;
-import static java.lang.Integer.valueOf;
-
+import org.yearup.timer.config.ClockConfig;
 @SpringBootApplication
 public class TimerApplication {
 
-
+	private static ClockConfig cc;
 
 	public static void main(String[] args)throws InterruptedException {
 
-		run();
-
 	}
-	public static void run() throws InterruptedException {
+	//Experimenting with timer logic
+	public static void runTimer() throws InterruptedException {
 		Clock clock = new Clock(3600);
 		int i = clock.getSec(), j = 61, k = 61;
 
