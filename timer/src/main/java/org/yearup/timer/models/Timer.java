@@ -1,29 +1,22 @@
 package org.yearup.timer.models;
 
-import static java.lang.Integer.parseInt;
-
-public class Clock {
+public class Timer {
     private int hours;
     private int min;
     private int sec;
     private int miliSec;
     private int remainingSec;
 
-    public Clock(int sec) {
+    public Timer(int sec) {
         this.sec = sec;
     }
 
     public int getHours() {
-        hours = getSec() / 3600;
-        if(hours < 1){
-            return 0;
-        }
-        return hours;
+        return getSec() / 3600;
     }
 
     public int getMin() {
-
-        return (getSec() % 3600) / 60;
+        return  (getSec() % 3600) / 60;
     }
 
     public int getSec() {
@@ -42,11 +35,10 @@ public class Clock {
     }
 
     public int getMiliSec() {
-        return miliSec;
+        return getSec() * 1000;
     }
-    public String formatTimer() {
-        return String.format("%02d:%02d:%02d", getHours(), getMin(), getRemainingSec());
-    }
+
+
 
     @Override
     public String toString() {
